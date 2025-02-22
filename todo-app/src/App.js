@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import TodoList from "./components/TodoList";
 import "./stayle.css";
 
-
 function App() {
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState("");
+  const [task, setTask] = useState("");
 
   const addTodo = () => {
-    if (newTodo.trim() !== "") {
-      setTodos([...todos, newTodo]);
-      setNewTodo("");
-    }
+    if (task.trim() === "") return;
+    setTodos([...todos, { text: task, completed: false }]);
+    setTask("");
+  };
+
+  const toggleComplete = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].completed = !newTodos[index].completed;
+    setTodos(newTodos);
   };
 
   const deleteTodo = (index) => {
@@ -19,15 +23,17 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>To-Do App</h1>
-      <input
-        type="text"
-        value={newTodo}
-        onChange={(e) => setNewTodo(e.target.value)}
+    <div className="todo-container">
+      <h2>To-Do List</h2>
+      <input 
+        type="text" 
+        className="todo-input" 
+        value={task} 
+        onChange={(e) => setTask(e.target.value)} 
+        placeholder="Add a task..."
       />
-      <button onClick={addTodo}>Add</button>
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <button className="add-btn" onClick={addTodo}>Add</button>
+      <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
     </div>
   );
 }
