@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* To-Do App Container */
+  .todo-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Input Field */
+  .todo-input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  /* Add Button */
+  .add-btn {
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    background: #27ae60;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .add-btn:hover {
+    background: #2ecc71;
+  }
+  
+  /* To-Do List */
+  .todo-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* To-Do Item */
+  .todo-item {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+  }
+  
+  /* Hover effect */
+  .todo-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background: #e74c3c;
+    border: none;
+    color: rgb(92, 5, 5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .delete-btn:hover {
+    background: #c0392b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 400px) {
+    .todo-container {
+      width: 90%;
+    }
+  }
+  
